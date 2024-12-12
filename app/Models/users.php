@@ -46,7 +46,7 @@ class users extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'created_at' => 'datetime',
+        'created_at' => 'timestamp',
         'updated_at'=> 'datetime',
         'password' => 'hashed',
     ];
