@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('serial_numbers', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger("shop_product_id");
+            $table->foreign("shop_product_id")->references("id")->on("shop_products")->onDelete("restrict")->onUpdate("concade");
             $table->string("serialnumber");
             $table->timestamps();
         });
