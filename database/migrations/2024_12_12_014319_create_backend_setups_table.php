@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create("backend-setup", function (Blueprint $table) {
+        Schema::create('backend_setups', function (Blueprint $table) {
             $table->id();
             $table->string("subcontractor");
             $table->string("provision");
@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date("projectcompleted");
             $table->date("date");
             $table->text("notes");
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists("backend-setup");
+        Schema::dropIfExists('backend_setups');
     }
 };

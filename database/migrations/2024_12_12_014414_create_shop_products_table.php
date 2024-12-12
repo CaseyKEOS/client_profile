@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create("serial_number", function (Blueprint $table) {
+        Schema::create('shop_products', function (Blueprint $table) {
             $table->id();
-            $table->string("serialnumber");
+            $table->foreignId("shopID")->references("shopID")->on("shop");
+            $table->foreignId("productID")->references("productID")->on("product");
+            $table->integer("quantity");
+            $table->timestamps();
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists("serial_number");
+        Schema::dropIfExists('shop_products');
     }
 };

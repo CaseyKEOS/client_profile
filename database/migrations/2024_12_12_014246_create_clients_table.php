@@ -11,11 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create("history", function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("userID")->references("userID")->on("users");
-            $table->foreignId("productID")->references("productID")->on("product");
+            $table->string("cfirstname");
+            $table->string("cmiddlename");
+            $table->string("csurname");
+            $table->string("caddress");
+            $table->string("cbirthday");
+            $table->string("cphonenum");
             $table->timestamp("created_at");
+            $table->text("notes");
+            $table->timestamps();
         });
     }
 
@@ -24,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists("history");
+        Schema::dropIfExists('clients');
     }
 };

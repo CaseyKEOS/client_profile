@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('samples', function (Blueprint $table) {
+        Schema::create('serial_numbers', function (Blueprint $table) {
             $table->id();
+            $table->string("serialnumber");
             $table->timestamps();
         });
     }
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('samples');
+        Schema::dropIfExists('serial_numbers');
     }
 };
