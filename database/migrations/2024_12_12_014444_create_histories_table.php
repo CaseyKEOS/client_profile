@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("userID")->references("userID")->on("users");
-            $table->foreignId("productID")->references("productID")->on("product");
-            $table->timestamp("created_at");
             $table->timestamps();
         });
     }

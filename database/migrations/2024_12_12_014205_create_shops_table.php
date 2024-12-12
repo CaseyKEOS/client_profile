@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string("scontactperson");
             $table->string("scontactnum");
             $table->date("contract_date");
-            $table->timestamp("created_at");
-            $table->date("updated_at");
             $table->text("notes");
             $table->timestamps();
         });

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string("caddress");
             $table->string("cbirthday");
             $table->string("cphonenum");
-            $table->timestamp("created_at");
             $table->text("notes");
             $table->timestamps();
         });
