@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('serial_numbers', function (Blueprint $table) {
             $table->id();
             $table->string("serialnumber");
+            $table->unsignedBigInteger("shop_product_id");
             $table->timestamps();
+
+            $table->foreign("shop_product_id")->references("id")->on("shop_products");
         });
     }
 

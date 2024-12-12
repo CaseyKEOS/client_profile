@@ -22,7 +22,12 @@ return new class extends Migration
             $table->string("scontactnum");
             $table->date("contract_date");
             $table->text("notes");
+            $table->unsignedBigInteger("shop_type_id");
+            $table->unsignedBigInteger("client_id");
             $table->timestamps();
+
+            $table->foreign('shop_type_id')->references('id')->on('shop_types')->onDelete('cascade');
+            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
         });
     }
 

@@ -19,7 +19,10 @@ return new class extends Migration
             $table->date("projectcompleted");
             $table->date("date");
             $table->text("notes");
+            $table->unsignedBigInteger("shop_id");
             $table->timestamps();
+
+            $table->foreign('shop_id')->references('id')->on('shops')->onDelete('cascade');
         });
     }
 

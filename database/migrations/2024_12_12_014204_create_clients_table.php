@@ -20,7 +20,10 @@ return new class extends Migration
             $table->string("cbirthday");
             $table->string("cphonenum");
             $table->text("notes");
+            $table->unsignedBigInteger("client_type_id");
             $table->timestamps();
+
+            $table->foreign("client_type_id")->references("id")->on("client_types");
         });
     }
 

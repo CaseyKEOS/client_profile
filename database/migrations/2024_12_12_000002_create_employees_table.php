@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->string("efullname");
+            $table->unsignedBigInteger("employee_type_id");
             $table->timestamps();
+
+            $table->foreign("employee_type_id")->references("id")->on("employees");
         });
     }
 
