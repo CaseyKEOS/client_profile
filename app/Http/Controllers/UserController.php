@@ -6,7 +6,6 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -37,7 +36,7 @@ class UserController extends Controller
 
         }
 
-        return redirect('/user')->with("success", "Registration Successful");
+        return redirect(route('user'))->with("success", "Registration Successful");
     }
 
     public function index()
@@ -47,17 +46,6 @@ class UserController extends Controller
         return view('user')->with('users', $users);
     }
 
-    public function update(Request $request, $id){}
 
-    public function destroy($id){
-        $user = User::find($id);
-    }
 
-    public function store(Request $request){
-        $validated = $request->validate([
-            'email'=> ['required','email',Rule::unique('users', 'email')],
-            'username'=> ['required','min:4'],
-            'password'=>['required','min:8'],
-        ]);
-    }
 }

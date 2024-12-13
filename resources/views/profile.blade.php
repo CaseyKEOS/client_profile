@@ -133,37 +133,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
-        <section class="mt-5">
-            <div class="container-fluid">
-                @if (empty($users))
-                    <p>No users found</p>
-                @else
-                    <table class="table container">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                            @foreach ($users as $item)
-                            <tr>
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->username }}</td>
-                                <td>{{ $item->email }}</td>
-                                <td>
-                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                @endif
-            </div>
-        </section>
     </div>
 @endsection
