@@ -2,16 +2,16 @@
 @section('title', 'Users')
 @section('content')
     <div class="userdetails">
-        <h1>Admins</h1>
+        <h1>Profiling</h1>
         <div class="container">
-            <button class="btn btn-primary" data-bs-target="#viewAdminToggle" data-bs-toggle="modal">Add New User</button>
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Add New User</button>
             {{-- modal --}}
-            <div class="modal fade" id="viewAdminToggle" aria-hidden="true" aria-labelledby="viewAdminToggleLabel"
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
                 tabindex="-1">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="viewAdminToggleLabel">Register New User</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Register New User</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form action="{{ route('registration.post') }}" method="POST">
@@ -108,18 +108,18 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-target="#viewAdminToggle2"
+                                <button type="button" class="btn btn-primary" data-bs-target="#exampleModalToggle2"
                                     data-bs-toggle="modal">Register</button>
                             </div>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="viewAdminToggle2" aria-hidden="true"
-                aria-labelledby="viewAdminToggleLabel2" tabindex="-1">
+            <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="viewAdminToggleLabel2">Register Confirmation</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Register Confirmation</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
                         </div>
@@ -127,7 +127,7 @@
                             Do you want to create this user?
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-target="#viewAdminToggle"
+                            <button type="button" class="btn btn-primary" data-bs-target="#exampleModalToggle"
                                 data-bs-toggle="modal">Go back</button>
                             <button type="submit" class="btn btn-success">Confirm</button>
                         </div>
@@ -135,13 +135,14 @@
                 </div>
             </div>
             </form>
+
         </div>
         <section class="mt-5">
-            <div class="container-fluid">
+            <div class="card container-sm">
                 @if (empty($users))
                     <p>No users found</p>
                 @else
-                    <table class="table container">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -150,39 +151,21 @@
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="table-group-divider">
+                        <tbody>
                             @foreach ($users as $item)
-                                <tr>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->username }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>
-                                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#viewAdmin">View</button>
-                                        <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                        <a href="" class="btn btn-danger btn-sm">Delete</a>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->username }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>
+                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
                 @endif
-            </div>
-            <!-- Button trigger modal -->
-
-            <!-- Modal -->
-            <div class="modal fade" id="viewAdmin" tabindex="-1" aria-labelledby="viewAdminLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="viewAdminLabel">User Details</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div></div>
-                    </div>
-
-                </div>
-                </div>
             </div>
         </section>
     </div>

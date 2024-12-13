@@ -50,24 +50,15 @@ public function index()
         return view('home', compact('users'));
     }
 
-    public function logout(Request $request){
-        auth()->logout();
+    function logout()
+    {
+        Auth::logout();  // Log out the current user
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        // If you're using session, flush session data
+        session()->invalidate();
+        session()->regenerateToken();
 
-        return redirect('/login');
+        // Prevent caching of the previous page (no back button allowed)
+        return redirect()->route('login')->with('noCache', true);
     }
-
-    // function logout()
-    // {
-    //     Auth::logout();  // Log out the current user
-
-    //     // If you're using session, flush session data
-    //     session()->invalidate();
-    //     session()->regenerateToken();
-
-    //     // Prevent caching of the previous page (no back button allowed)
-    //     return redirect()->route('login')->with('noCache', true);
-    // }
 }
