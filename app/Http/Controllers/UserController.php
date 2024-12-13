@@ -46,6 +46,10 @@ class UserController extends Controller
         return view('user')->with('users', $users);
     }
 
-
+    public function show($id){
+        $data = User::findOrFail($id);
+        dd($data);
+        // return view('user')->with('users', $data);
+    }
 
 }

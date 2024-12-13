@@ -2,7 +2,7 @@
 @section('title', 'Users')
 @section('content')
     <div class="userdetails">
-        <h1>Profiling</h1>
+        <h1>Admins</h1>
         <div class="container">
             <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Add New
                 User</button>
@@ -172,6 +172,7 @@
                                     <p class="fw-normal mb-1">{{ $item->address }}</p>
                                 </td>
                                 <td>
+                                    <a href="/user/{{$item->id}}" class="btn btn-sucess btn-sm">View</a>
                                     <a href="" class="btn btn-primary btn-sm">Edit</a>
                                     <a href="" class="btn btn-danger btn-sm">Delete</a>
                                 </td>

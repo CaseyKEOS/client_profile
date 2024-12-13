@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\UserController;
-use Illuminate\Auth\AuthManager as AuthAuthManager;
 use Illuminate\Support\Facades\DB;
 
 /*
@@ -41,3 +40,10 @@ Route::get('/user', function () {
     $users = DB::table('users')->select('id','username','email','phonenum', 'address', 'firstname', 'middlename', 'surname')->get();
     return view('user', compact('users'));
 });
+
+Route::get('/profile', function () {
+    $clients = DB::table('clients')->select('id', 'caddress', 'cfirstname', 'cmiddlename', 'csurname', 'cbirthday', 'cphonenum', 'notes')->get();
+    return view('profile', compact('clients'));
+});
+
+Route::get('/user/{id}', [UserController::class,'show']);

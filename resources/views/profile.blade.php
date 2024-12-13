@@ -133,7 +133,48 @@
                     </div>
                 </div>
             </div>
-
         </div>
+        <section class="my-5">
+            <div class="card container">
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Number</th>
+                            <th>Addess</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($clients as $item)
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="mb-1">
+                                            <p class="fw-bold mb-1">{{ $item->cfirstname }} {{ $item->cmiddlename }}
+                                                {{ $item->csurname }}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="fw-normal mb-1">{{ $item->cemail }}</p>
+                                </td>
+                                <td>
+                                    <p class="fw-normal mb-1">{{ $item->cphonenum }}</p>
+                                </td>
+                                <td>
+                                    <p class="fw-normal mb-1">{{ $item->caddress }}</p>
+                                </td>
+                                <td>
+                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
 @endsection

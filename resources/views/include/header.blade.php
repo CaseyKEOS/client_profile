@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <!-- Toggle button -->
         <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+        <div class=" justify-content-center" id="navbarCenteredExample">
             <!-- Left links -->
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
@@ -22,8 +22,8 @@
         @if (Route::has('login'))
             <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
                 @auth
-                    <a href="{{ url('/home') }}"
-                        class="btn btn-primary">Home</a>
+                    {{-- <a href="{{ url('/home') }}"
+                        class="btn btn-primary">Home</a> --}}
                     <a href="{{ url('/logout') }}"
                         class="btn btn-danger ">Logout</a>
                 @else
