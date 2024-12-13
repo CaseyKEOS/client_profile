@@ -13,8 +13,8 @@ class AuthManager extends Controller
         return view('login');
     }
 
-    function registration(){
-        return view('registration');
+    function user(){
+        return view('user');
     }
 
 function loginPost(Request $request)
@@ -31,8 +31,8 @@ function loginPost(Request $request)
     // Check if the input is email, username, or phone number
     $user = \App\Models\User::where(function($query) use ($login) {
         $query->where('email', $login)
-              ->orWhere('username', $login);  // Assuming 'username' is a column in your users table
-            //   ->orWhere('phonenumber', $login);  // Uncomment if you want to support phone number login
+              ->orWhere('username', $login)  // Assuming 'username' is a column in your users table
+              ->orWhere('phonenum', $login);  // Uncomment if you want to support phone number login
     })->first();
 
     // If a user is found and the password matches
@@ -44,6 +44,12 @@ function loginPost(Request $request)
     // If authentication fails
     return redirect(route('login'))->with("error", "Login details are not valid");
 }
+
+public function index()
+    {
+        $users = Auth::all();
+        return view('home', compact('users'));
+    }
 
 
 function registrationPost(Request $request){
@@ -69,12 +75,13 @@ function registrationPost(Request $request){
     $user = User::create($data);
 
     if(!$user){
-        return redirect(route('registration'))->with("error", "Registration failed, try again.");
+        return redirect(route('user'))->with("error", "Registration failed, try again.");
 
     }
 
-    return redirect(route('login'))->with("success", "Registration Successful");
+    return redirect(route('user'))->with("success", "Registration Successful");
 }
+
     function logout()
     {
         Auth::logout();  // Log out the current user

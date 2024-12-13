@@ -21,8 +21,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('email')->unique();
             $table->string('password');
-            $table->date('updated_at');
-            $table->timestamp('create_at');
+            $table->timestamps();
         });
     }
 

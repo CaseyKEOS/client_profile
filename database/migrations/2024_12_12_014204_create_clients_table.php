@@ -23,7 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger("client_type_id");
             $table->timestamps();
 
-            $table->foreign("client_type_id")->references("id")->on("client_types");
+            $table->foreign("client_type_id")->references("id")->on("client_types")->onDelete('cascade');
         });
     }
 
