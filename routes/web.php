@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// })->name('home')->middleware('auth');
+Route::get('/', function () {
+    return view('home');
+})->name('home')->middleware('auth');
 
 Route::get('/login', [AuthManager::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
@@ -33,7 +33,7 @@ Route::get('/profile', function () {
 });
 
 // Route::get('users', [AuthManager::class,'home']);
-Route::get('/', [AuthManager::class, 'index'])->middleware('auth');
+// Route::get('/', [AuthManager::class, 'home'])->middleware('auth');
 
 
 
