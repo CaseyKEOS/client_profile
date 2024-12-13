@@ -33,10 +33,10 @@ Route::get('/profile', function () {
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 
-Route::get('/user', [UserController::class, 'user'])->name('user');
+Route::get('/user', [UserController::class, 'index'])->name('user');
 Route::post('/registration', [UserController::class, 'registrationPost'])->name('registration.post');
 
-Route::get('/logout',[AuthManager::class, 'logout'])->name('logout');
+Route::post('/logout',[AuthManager::class, 'logout']);
 
 Route::get('/user', function () {
     $users = DB::table('users')->select('id','username','email')->get();
