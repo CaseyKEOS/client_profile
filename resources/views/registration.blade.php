@@ -1,4 +1,4 @@
-@extends('outside')
+@extends('layouts.outside')
 @section('title', 'Registration')
 @section('content')
     <div class="card container-sm p-5 mt-5">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,10 +35,9 @@ Route::get('users', [AuthManager::class,'home']);
 
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
-Route::get('/login/{$id,$username}', [AuthManager::class,'show']);
 
 Route::get('/user', [AuthManager::class, 'user'])->name('user');
-Route::post('/registration', [AuthManager::class, 'registrationPost'])->name('registration.post');
+Route::post('/registration', [UserController::class, 'registrationPost'])->name('registration.post');
 
 Route::get('/logout',[AuthManager::class, 'logout'])->name('logout');
 

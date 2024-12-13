@@ -1,4 +1,4 @@
-@extends('outside')
+@extends('layouts.outside')
 @section('title', 'Login')
 @section('content')
 

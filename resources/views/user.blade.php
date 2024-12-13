@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.layout')
 @section('title', 'Users')
 @section('content')
     <div class="userdetails">
