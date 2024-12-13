@@ -12,8 +12,15 @@
     <meta http-equiv="Expires" content="0">
 </head>
   <body>
+@auth
     @include('include.header')
     @yield('content')
+@else
+    <script type="text/javascript">
+        // Redirect to a specific route in Laravel
+        window.location.href = "{{ route('login') }}";
+    </script>
+@endauth
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
