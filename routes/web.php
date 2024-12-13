@@ -32,11 +32,6 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-// Route::get('users', [AuthManager::class,'home']);
-// Route::get('/', [AuthManager::class, 'home'])->middleware('auth');
-
-
-
 Route::get('/user', [UserController::class, 'user'])->name('user');
 Route::post('/registration', [UserController::class, 'registrationPost'])->name('registration.post');
 
