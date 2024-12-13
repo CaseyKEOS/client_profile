@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -37,4 +38,14 @@ class UserController extends Controller
 
         return redirect(route('user'))->with("success", "Registration Successful");
     }
+
+    public function index()
+    {
+        $users = DB::table('users')->select('id','username','email')->get();
+
+        return view('user')->with('users', $users);
+    }
+
+
+
 }

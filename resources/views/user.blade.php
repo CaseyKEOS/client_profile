@@ -15,20 +15,20 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form action="{{ route('registration.post') }}" method="POST">
-                        <div class="modal-body">
-                            <div class="container">
-                                <div class="">
-                                    @if ($errors->any())
-                                        <div class="col-12">
-                                            @foreach ($errors->all() as $error)
-                                                <div class="alert alert-danger">{{ $error }}</div>
-                                            @endforeach
-                                        </div>
-                                    @endif
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="">
+                                        @if ($errors->any())
+                                            <div class="col-12">
+                                                @foreach ($errors->all() as $error)
+                                                    <div class="alert alert-danger">{{ $error }}</div>
+                                                @endforeach
+                                            </div>
+                                        @endif
 
-                                    @if (session()->has('error'))
-                                    @endif
-                                </div>
+                                        @if (session()->has('error'))
+                                        @endif
+                                    </div>
 
                                     @csrf
                                     <div class="mb-3">
@@ -104,12 +104,12 @@
                                         </div>
                                     </div>
 
+                                </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-target="#exampleModalToggle2"
-                                data-bs-toggle="modal">Register</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                                    data-bs-toggle="modal">Register</button>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -133,8 +133,39 @@
                     </div>
                 </div>
             </div>
-        </form>
+            </form>
 
         </div>
+        <section class="mt-5">
+            <div class="card container-sm">
+                @if (empty($users))
+                    <p>No users found</p>
+                @else
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($users as $item)
+                            <tr>
+                                <td>{{ $item->id }}</td>
+                                <td>{{ $item->username }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>
+                                    <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                @endif
+            </div>
+        </section>
     </div>
 @endsection
