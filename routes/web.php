@@ -37,10 +37,10 @@ Route::get('/', [AuthManager::class, 'index'])->middleware('auth');
 
 
 
-Route::get('/user', [UserController::class, 'user'])->name('user');
+Route::get('/user', [UserController::class, 'index'])->name('user');
 Route::post('/registration', [UserController::class, 'registrationPost'])->name('registration.post');
 
-Route::get('/logout',[AuthManager::class, 'logout'])->name('logout');
+Route::post('/logout',[AuthManager::class, 'logout']);
 
 Route::get('/user', function () {
     $users = DB::table('users')->select('id','username','email')->get();
