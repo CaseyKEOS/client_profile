@@ -38,6 +38,6 @@ Route::post('/registration', [UserController::class, 'registrationPost'])->name(
 Route::get('/logout',[AuthManager::class, 'logout'])->name('logout');
 
 Route::get('/user', function () {
-    $users = DB::table('users')->select('id','username','email')->get();
+    $users = DB::table('users')->select('id','username','email','phonenum', 'address', 'firstname', 'middlename', 'surname')->get();
     return view('user', compact('users'));
 });

@@ -4,7 +4,8 @@
     <div class="userdetails">
         <h1>Profiling</h1>
         <div class="container">
-            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Add New User</button>
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Add New
+                User</button>
             {{-- modal --}}
             <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
                 tabindex="-1">
@@ -137,35 +138,47 @@
             </form>
 
         </div>
-        <section class="mt-5">
-            <div class="card container-sm">
-                @if (empty($users))
-                    <p>No users found</p>
-                @else
-                    <table class="table">
-                        <thead>
+        <section class="my-5">
+            <div class="card container">
+                <table class="table align-middle mb-0 bg-white">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Number</th>
+                            <th>Addess</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($users as $item)
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Username</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($users as $item)
-                            <tr>
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->username }}</td>
-                                <td>{{ $item->email }}</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="mb-1">
+                                            <p class="fw-bold mb-1">{{ $item->firstname }} {{ $item->middlename }}
+                                                {{ $item->surname }}</p>
+                                            <p class="text-muted mb-0">Username: {{ $item->username }}</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="fw-normal mb-1">{{ $item->email }}</p>
+                                </td>
+                                <td>
+                                    <p class="fw-normal mb-1">{{ $item->phonenum }}</p>
+                                </td>
+                                <td>
+                                    <p class="fw-normal mb-1">{{ $item->address }}</p>
+                                </td>
                                 <td>
                                     <a href="" class="btn btn-primary btn-sm">Edit</a>
                                     <a href="" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                @endif
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </section>
     </div>
