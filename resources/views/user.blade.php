@@ -172,7 +172,7 @@
                                     <p class="fw-normal mb-1">{{ $item->address }}</p>
                                 </td>
                                 <td>
-                                    <a href="/user/{{$item->id}}" class="btn btn-sucess btn-sm">View</a>
+                                    <a href="/user/{{$item->id}}" class="btn btn-success btn-sm">View</a>
                                     <a href="" class="btn btn-primary btn-sm">Edit</a>
                                     <a href="" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
