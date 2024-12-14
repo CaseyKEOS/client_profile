@@ -49,4 +49,4 @@ Route::get('/profile', function () {
 
 Route::get('/user/{id}', [UserController::class,'show']);
 
-Route::post('/profile', [ProfileController::class, 'storeClient'])->name('storeClient');
+Route::post('/profile', [ProfileController::class, 'storeClient'])->name('storeclient.post');

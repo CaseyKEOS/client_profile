@@ -32,11 +32,11 @@ class UserController extends Controller
         $user = User::create($data);
 
         if(!$user){
-            return redirect(route('user'))->with("error", "Registration failed, try again.");
+            return redirect('/user')->with("error", "Registration failed, try again.");
 
         }
 
-        return redirect(route('user'))->with("success", "Registration Successful");
+        return redirect('/user')->with("success", "Registration Successful");
     }
 
     public function index()

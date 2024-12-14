@@ -15,7 +15,7 @@
                             <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Register New User</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form action="storeClient" method="POST">
+                        <form action="{{ route('storeclient.post')}}" method="POST">
                             @csrf
                             <div class="modal-body">
                                 <div class="container">

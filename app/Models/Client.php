@@ -10,13 +10,19 @@ class Client extends Model
     use HasFactory;
 
     protected $table = "clients";
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
     protected $fillable = [
-        'username',
-        'phonenum',
-        'firstname',
-        'middlename',
-        'surname',
-        'address',
+        'cusername',
+        'cphonenum',
+        'cfirstname',
+        'cmiddlename',
+        'csurname',
+        'caddress',
     ];
 
     /**
