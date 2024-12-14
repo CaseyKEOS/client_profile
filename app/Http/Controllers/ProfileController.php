@@ -19,20 +19,25 @@ class ProfileController extends Controller
             'cmiddlename' => 'required',
             'csurname' => 'required',
             'caddress' => 'required',
-            'cusername' => 'required',
             'cphonenum' => 'required',
+            'cbirthday' => 'required',
+            'notes' => 'required',
+            'client_type_id' => 'required',
         ]);
 
-        DB::table('clients')->insert([
-            'cfirstname' =>$request->input('firstname'),
-            'cmiddlename' =>$request->input('middlename'),
-            'csurname' =>$request->input('surname'),
-            'caddress' =>$request->input('address'),
-            'cusername' =>$request->input('username'),
-            'cphonenum' =>$request->input('phonenum'),
-            'created_at' =>now(),
-            'updated_at'=>now(),
+        $clients=DB::table('clients')->insert([
+            'cfirstname' =>$request->input('cfirstname'),
+            'cmiddlename' =>$request->input('cmiddlename'),
+            'csurname' =>$request->input('csurname'),
+            'caddress' =>$request->input('caddress'),
+            'cphonenum' =>$request->input('cphonenum'),
+            'cbirthday' =>$request->input('cbirthday'),
+            'notes' => $request->input('notes'),
+            'client_type_id'=>$request->input('clientype'),
         ]);
+        if(!$clients){
+            return back()->with('error','not inserting');
+        }
 
         return redirect(route('profile'))->with('message','Client Adding Successful');
     }

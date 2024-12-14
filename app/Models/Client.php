@@ -21,8 +21,10 @@ class Client extends Model
         'cphonenum',
         'cfirstname',
         'cmiddlename',
-        'csurname',
         'caddress',
+        'cbirthday',
+        'notes',
+        'client_type_id',
     ];
 
     /**

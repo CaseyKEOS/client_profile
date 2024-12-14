@@ -38,14 +38,14 @@
                                             <div class="col-md">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="username"
-                                                        placeholder="name@example.com" name="username">
+                                                        placeholder="name@example.com" name="cusername">
                                                     <label for="username">Username</label>
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="phonenum"
-                                                        placeholder="name@example.com" name="phonenum">
+                                                        placeholder="name@example.com" name="cphonenum">
                                                     <label for="phonenum">Phone No.</label>
                                                 </div>
                                             </div>
@@ -56,21 +56,21 @@
                                             <div class="col-md">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="firstname"
-                                                        placeholder="name@example.com" name="firstname">
+                                                        placeholder="name@example.com" name="cfirstname">
                                                     <label for="firstname">First Name</label>
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="middlename"
-                                                        placeholder="name@example.com" name="middlename">
+                                                        placeholder="name@example.com" name="cmiddlename">
                                                     <label for="middlename">Middle Initial</label>
                                                 </div>
                                             </div>
                                             <div class="col-md">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="surname"
-                                                        placeholder="name@example.com" name="surname">
+                                                        placeholder="name@example.com" name="csurname">
                                                     <label for="surname">Surname</label>
                                                 </div>
                                             </div>
@@ -81,13 +81,37 @@
                                             <div class="col-md">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="address"
-                                                        placeholder="name@example.com" name="address">
+                                                        placeholder="name@example.com" name="caddress">
                                                     <label for="address">Address</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-floating">
+                                                    <input type="date" class="form-control" id="birthday"
+                                                        placeholder="birthday" name="cbirthday">
+                                                    <label for="birthday">Birthday</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class="mb-3">
+                                        <div class="row g-2">
+                                            <div class="col-md">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="notes"
+                                                        placeholder="enter notes" name="notes">
+                                                    <label for="notes">Notes</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="clientype"
+                                                        placeholder="clien type" name="clientype">
+                                                    <label for="clientype">Client Type</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
