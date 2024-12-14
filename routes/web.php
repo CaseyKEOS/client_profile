@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\DB;
 
@@ -47,3 +48,5 @@ Route::get('/profile', function () {
 });
 
 Route::get('/user/{id}', [UserController::class,'show']);
+
+Route::post('/profile', [ProfileController::class, 'storeClient'])->name('storeClient');

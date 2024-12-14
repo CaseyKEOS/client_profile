@@ -8,4 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class Client extends Model
 {
     use HasFactory;
+
+    protected $table = "clients";
+    protected $fillable = [
+        'username',
+        'phonenum',
+        'firstname',
+        'middlename',
+        'surname',
+        'address',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'created_at' => 'timestamp',
+        'updated_at'=> 'datetime',
+    ];
 }
